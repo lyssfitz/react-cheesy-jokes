@@ -26,7 +26,7 @@ class JokeList extends Component {
 			//Load Jokes
 			let jokes = [];
 			while (jokes.length < this.props.numJokesToGet) {
-				let res = await axios.get('https://icanhazdadjoke.comkf/', { headers: { Accept: 'application/json' } });
+				let res = await axios.get('https://icanhazdadjoke.com/', { headers: { Accept: 'application/json' } });
 				let newJoke = res.data.joke;
 				if (!this.seenJokes.has(newJoke)) {
 					jokes.push({ id: uuidv4(), text: res.data.joke, votes: 0 });
@@ -76,7 +76,7 @@ class JokeList extends Component {
 					</h1>
 					<img src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg" />
 					<button onClick={this.handleClick} className="JokeList-getmore">
-						New Jokes
+						Fetch Jokes
 					</button>
 				</div>
 
